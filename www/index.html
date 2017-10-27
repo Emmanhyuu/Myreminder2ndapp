@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>My Reminder</title>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+        <link rel="stylesheet" href="js/jquery.mobile-1.4.5.min.css" />
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script>
+        $(document).on("mobileinit", function() {
+            $.mobile.toolbar.prototype.options.addBackBtn = true;
+        });
+    </script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+
+    .save-button{
+        background: #5cb85c;
+        text-shadow: 0 0 0; 
+        color: #ffffff;
+    }
+
+    </style>
+    <title>My Reminder</title>
+    <style type="text/css">
+body {
+    background: url(images.jpg);
+    background-repeat:repeat-y;
+    background-position:center center;
+    background-attachment:scroll;
+    background-size:100% 100%;
+}
+.ui-page {
+    background: transparent;
+}
+.ui-content{
+    background: transparent;
+}
+</style>
+    </head>
+
+
+    <body>
+        <div data-role="page" id="Homepage">
+            
+            <div data-role="header" data-position="fixed" data-theme="a">
+                <H1>My Reminder</H1>   
+            </div>
+
+            <div data-role="main" class="ui-content">   
+
+                <ul id="note_List" data-role="listview" data-filter="true" data-filter-placeholder="Search Notes" data-inset="false">
+
+                </ul>
+                
+            </div>
+
+            <div data-role="footer" data-position="fixed" data-theme="a">
+                <div data-role="navbar" data-iconpos="top" >
+                    <ul>
+                        
+                        <li>
+                            <a href="#NotePage" class="ui-btn" data-icon="comment">Add Reminder</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+
+        <div data-role="page" id="NotePage">
+
+            <div data-role="header">
+                <H1>Add Reminder</H1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <form id="form-Add">
+                    <label for="noteDescription">Name of your Reminder:</label>
+                    <input type="text" id="noteDescription" value=""> 
+
+                    <label for="note">Describe your reminder here:</label>
+                    <textarea type="text" id="addNote"></textarea>
+
+                    <center><button id="submitNote" class="ui-btn ui-btn-inline">Save</button>
+
+                </form>
+            </div>
+            
+        </div>  
+
+        <div data-role="page" id="EditNotePage">
+
+            <div data-role="header">
+                <H1>Edit Reminder</H1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                
+                    <label for="noteDescriptionEdit">Name of your Reminder:</label>
+                    <input type="text" id="noteDescriptionEdit" value=""> 
+
+                    <label for="noteEdit">Describe your reminder here:</label>
+                    <textarea type="text" id="noteEdit"></textarea>
+
+
+                    <CENTER><button id="submitEditNote" class="ui-btn ui-btn-inline">Save</button>
+                    <button id="deleteNote" class="ui-btn ui-btn-inline">Delete</button></center>
+                    <HR>
+                
+            </div>
+
+         
+        </div> 
+
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
